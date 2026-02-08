@@ -1,0 +1,213 @@
+/* Welcome Section Styles */
+.welcome-section {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.welcome-wave {
+    display: inline-block;
+    font-size: 3rem;
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+}
+
+.welcome-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Welcome Cards */
+.welcome-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.welcome-card {
+    position: relative;
+    background: var(--bg-white);
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.welcome-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.welcome-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.welcome-card:hover::before {
+    opacity: 1;
+}
+
+.card-number {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    display: block;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.card-link .arrow {
+    transition: transform var(--transition-fast);
+}
+
+.welcome-card:hover .card-link .arrow {
+    transform: translateX(4px);
+}
+
+/* Welcome Tip */
+.welcome-tip {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(14, 165, 233, 0.05));
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.welcome-tip p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.welcome-tip strong {
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .welcome-wave {
+        font-size: 2.5rem;
+    }
+
+    .welcome-cards {
+        gap: var(--space-md);
+    }
+
+    .welcome-card {
+        padding: var(--space-lg);
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+    }
+
+    .welcome-tip {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+}

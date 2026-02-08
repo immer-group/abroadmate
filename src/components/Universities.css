@@ -1,0 +1,40 @@
+.universities-section {
+    padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f0f9ff 100%);
+}
+
+.universities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 400px) {
+    .universities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.no-universities {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 2px dashed var(--border-color);
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.no-universities p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+}
+
+.no-universities .hint {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
